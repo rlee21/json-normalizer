@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/python:3.6.1
-    working_directory: /tmp
+    working_directory: ~/tmp
     steps:
       - checkout
 
@@ -11,10 +11,10 @@ jobs:
       - run:
           name: run tests
           command: |
-            mkdir /tmp/artifacts;
+            mkdir ~/tmp/artifacts;
             export PYTHONPATH=.;
             python tests/test_normalizer.py;
 
       - store_artifacts:
-          path: /tmp/artifacts
-          destination: /tmp/artifacts
+          path: ~/tmp/artifacts
+          destination: ~/tmp/artifacts
