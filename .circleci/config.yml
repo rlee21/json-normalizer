@@ -4,15 +4,15 @@ jobs:
     docker:
       - image: circleci/python:3.6.1
     working_directory: ~/tmp
-    environment:
-      - PYTHONPATH: '~/tmp/json-normalizer'
     steps:
       - checkout
 
       # run tests!
       - run:
           name: run tests
-          command: python tests/test_normalizer.py
+          command: |
+            export PYTHONPATH=.
+            python tests/test_normalizer.py
 
       - store_artifacts:
           path: test-reports
