@@ -11,10 +11,8 @@ jobs:
       - run:
           name: run tests
           command: |
-            mkdir ~/tmp/artifacts;
-            export PYTHONPATH=.;
-            python tests/test_normalizer.py;
+            python -m unittest discover -s testing
 
       - store_artifacts:
-          path: ~/tmp/artifacts
-          destination: ~/tmp/artifacts
+          path: ~/tmp
+          destination: ~/tmp
