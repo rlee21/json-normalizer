@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circle/python:3
+    working_directory: ~/tmp
+    environment:
+      - PYTHONPATH: '~/tmp/json-normalizer'
+    steps:
+      - checkout
+      - run:
+          name: run tests
+          command: python tests/test_normalizer.py
+          
