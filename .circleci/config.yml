@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circle/python:3
+      - image: circleci/python:3.5.2
     working_directory: ~/tmp
     environment:
       - PYTHONPATH: '~/tmp/json-normalizer'
