@@ -11,7 +11,7 @@ jobs:
       - run:
           name: run tests
           command: |
-            python -m unittest discover -s testing
+            python -m unittest discover -s tests
 
       - store_artifacts:
           path: ~/tmp
