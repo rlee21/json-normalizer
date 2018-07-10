@@ -8,7 +8,13 @@ jobs:
       - PYTHONPATH: '~/tmp/json-normalizer'
     steps:
       - checkout
+
+      # run tests!
       - run:
           name: run tests
           command: python tests/test_normalizer.py
+
+      - store_artifacts:
+          path: test-reports
+          destination: test-reports
           
